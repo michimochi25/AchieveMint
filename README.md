@@ -17,7 +17,7 @@ We developed our project by using:
 - MongoDB
 - Express
 - ZenQuote API
-- MUI Material
+- Material UI (MUI)
 
 ## Unique Features ✨
 We have:
