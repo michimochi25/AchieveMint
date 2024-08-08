@@ -20,33 +20,30 @@ function Todo({ isDarkMode, handleModeChange }) {
   return (
     <div className={
       isDarkMode === true
-        ? "h-screen p-2 bg-[#302E28]"
-        : "h-screen p-2 bg-[#FFFDEE]"
+        ? "flex flex-col place-items-center w-full p-2 bg-[#302E28]"
+        : "flex flex-col place-items-center w-full p-2 bg-[#FFFDEE]"
     } >
-      <div id="header" className="grid grid-cols-3 m-2 py-4 place-items-center h-1/5">
-        <div className="text-3xl font-bold">
+      <div id="header" className="static w-screen grid sm:grid-cols-3 grid-cols-2 m-2 p-4 place-items-center 
+        justify-between mb-10 sm:mb-0 sm:min-h-[150px]">
+        <div className="text-3xl font-bold sm:justify-self-auto justify-self-start">
           <span className={
             isDarkMode === true
               ? "text-[#FBFBFB]"
               : "text=[#302E28]"}>Achieve</span><span className="text-[#2ADCB1]">Mint</span>
           {/* <img src=""></img> */}
         </div>
-
-        <div id="quotes" className="">
-          {/* quotes pop up when you finish a task will later implement
-              prop so that quote shows up once a button is clicked */}
-          <PopUpQuotes isDarkMode={isDarkMode} />
+        <div className='hidden sm:block'>
+          {/*empty div */}
         </div>
 
-        <div id="mode-button">
-          <div className="" >
+        <div id="mode-button" className="sm:justify-self-auto justify-self-end">
+          <div>
             <ModeButton isDarkMode={isDarkMode} handleModeChange={handleModeChange} />
           </div>
         </div>
-
       </div>
 
-      <div id="body" className="flex justify-center">
+      <div id="body" className="grid md:grid-cols-2 max-w-max justify-center">
         <div className="min-w-96 basis-1/3">
           {/*button to go back to landing page,
           position is a bit weird, but will probably fix that later when we have
